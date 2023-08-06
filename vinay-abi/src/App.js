@@ -69,40 +69,24 @@ function App() {
     setDisabled(false);
   }
 
-  // diplay next
 
-  const displayNext = (num) =>{
-   setpagenum(num)
-   if(num == 4){
-   shuffleCards()
-   }
-  }
 
   return (
     <div className="App">
-        {pagenum == 1 && matchcounter < 6? 
         <div className='page'>
         <h1>Its Happening !!!</h1>
         <h1>You are invited</h1>
-        <img className='nextimg' src='/image/next.png'  onClick={() => displayNext(2)}/>
       </div> 
-      : ""} 
-      {pagenum == 2 && matchcounter < 6 ?
       <div className='page'>
       <h2>Hi there !!! Lets play a fun game before we reveal you the details, c'mon why not ? </h2>
-      <img className='nextimg' src='/image/next.png'  onClick={() => displayNext(3)}/>
       </div>
-      : ""}
-     {pagenum == 3 && matchcounter < 6 ? 
       <div className='page'>
       <h4> Its a memory game and the rules are simple </h4>
       <h5> Click on the cards and match the right images to win the game.</h5>
-      <img className='nextimg' src='/image/next.png'  onClick={() => displayNext(4)}/>
+      <button className='game' onClick={shuffleCards}>Lets Go</button>
       </div> 
-      :""}
-      {pagenum == 4 && matchcounter < 6 ?
-      <div className='page-four'>
-      <div className='card-grid'>
+      <div className='page'>
+      <div id='card-grid'>
         {
           cards.map(card => (
             <SingleCard
@@ -116,11 +100,9 @@ function App() {
         }
       </div>
       </div>
-      : ""}
       {matchcounter == 6 ? 
       <div className='page'>
         <img className='inviteimg' src="/image/invite.png"/>
-        {/* <button onClick={() => displayNext(4)} className="game">Try again</button> */}
       </div>
       :""}
       </div>

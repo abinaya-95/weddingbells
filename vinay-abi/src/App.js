@@ -19,7 +19,7 @@ function App() {
   const [choiceTwo, setChoiceTwo] = useState(null)
   const [disabled, setDisabled] = useState(false)
   const [matchcounter, setMatchcounter] = useState(0);
-  const [pagenum,setpagenum] =useState(1)
+  const [pagenum, setpagenum] = useState(1)
 
   // shuffle cards
   const shuffleCards = () => {
@@ -73,39 +73,40 @@ function App() {
 
   return (
     <div className="App">
-        <div className='page'>
+      <div className='page'>
         <h1>Its Happening !!!</h1>
         <h1>You are invited</h1>
-      </div> 
-      <div className='page'>
-      <h2>Hi there !!! Lets play a fun game before we reveal you the details, c'mon why not ? </h2>
       </div>
       <div className='page'>
-      <h4> Its a memory game and the rules are simple </h4>
-      <h5> Click on the cards and match the right images to win the game.</h5>
-      <button className='game' onClick={shuffleCards}>Lets Go</button>
-      </div> 
+        <h2>Hi there !!! Lets play a fun game before we reveal you the details, c'mon why not ? </h2>
+      </div>
       <div className='page'>
-      <div id='card-grid'>
-        {
-          cards.map(card => (
-            <SingleCard
-              key={card.id}
-              card={card}
-              handleChoice={handleChoice}
-              flipped={card === choiceOne || card === choiceTwo || card.matched}
-              disabled={disabled}
-            />
-          ))
-        }
+        <h2> Its a memory game and the rules are simple </h2>
+        <h2> Click on the cards and match the right images to win the game.</h2>
+        <button className='game' onClick={shuffleCards}>Lets Go</button>
       </div>
+      {matchcounter < 6 ? <div className='page'>
+        <div id='card-grid'>
+          {
+            cards.map(card => (
+              <SingleCard
+                key={card.id}
+                card={card}
+                handleChoice={handleChoice}
+                flipped={card === choiceOne || card === choiceTwo || card.matched}
+                disabled={disabled}
+              />
+            ))
+          }
+        </div>
       </div>
-      {matchcounter == 6 ? 
-      <div className='page'>
-        <img className='inviteimg' src="/image/invite.png"/>
-      </div>
-      :""}
-      </div>
+        : ""}
+      {matchcounter == 6 ?
+        <div className='page'>
+          <img className='inviteimg' src="/image/invite.png" />
+        </div>
+        : ""}
+    </div>
   );
 }
 

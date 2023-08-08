@@ -1,70 +1,11 @@
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .App {
   max-width: 100%;
-  justify-content: center;
   max-height: 100%;
-  margin: auto;
 }
 
-.page{
-  margin: auto;
-  height: 90vh;
-  margin-top: 10%;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.inviteimg{
-  max-width: 60vh;
-  animation: fadeIn 5s; 
-}
-
-h1,h2{
-  animation: fadeIn 5s; 
-}
-
-
-#card-grid{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 1em;
-}
-
-/* @media(max-width: 767px){
-#card-grid {
-  margin-left: 0%;
-}
-}
-
-@media(min-width: 768px) and (max-width: 991px){
-  #card-grid {
-    margin-left: 10%;
-  }
-}
-
-@media(min-width: 992px) and (max-width: 1024px){
-  #card-grid {
-    margin-left: 15%;
-  }
-} */
-
-.game {
-  margin-top: 1em;
-  background: none;
-  border: 2px solid #dab0b0;
-  padding: 6px 12px;
-  border-radius: 4px;
-  color: #dab0b0;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1em;
-}
-
-.game:hover {
-  background: #4fb17e;
-  color: #fff;
-}
